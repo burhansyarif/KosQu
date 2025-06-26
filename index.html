@@ -2,35 +2,114 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <title>KostQu</title>
 
-    <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-
-    <!-- Additional CSS Files -->
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/templatemo-villa-agency.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-    <!--
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/isotope.min.js"></script>
 
-TemplateMo 591 villa agency
+    <style>
+        .custom-popup {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        
+        .custom-popup-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .custom-popup button {
+            min-width: 100px;
+        }
 
-https://templatemo.com/tm-591-villa-agency
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
--->
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .social-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #f35525;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            }
+
+        .social-card:hover {
+            background-color: #f35525;
+            color: #fff;
+            }
+
+        .social-card:hover i {
+            color: #fff;
+            }
+
+        .icon-wrapper i {
+            font-size: 36px;
+            color: #f35525;
+            }
+
+        .text-wrapper h5 {
+            margin: 0 0 4px;
+            font-weight: 600;
+            font-size: 18px;
+            }
+
+        .text-wrapper p {
+            margin: 0;
+            font-size: 14px;
+            }
+
+    </style>
+
 </head>
 
 <body>
-
-    <!-- ***** Preloader Start ***** -->
+    
     <div id="js-preloader" class="js-preloader">
         <div class="preloader-inner">
             <span class="dot"></span>
@@ -41,62 +120,57 @@ https://templatemo.com/tm-591-villa-agency
             </div>
         </div>
     </div>
-    <!-- ***** Preloader End ***** -->
-
-    <!-- <div class="sub-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-8">
-                    <ul class="info">
-                        <li><i class="fa fa-envelope"></i> kostqu@gmailcom</li>
-                        <li><i class="fa fa-map"></i> Surabaya, Jawa Timur</li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <ul class="social-links">
-                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="https://x.com/minthu" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
     <!-- ***** Header Area Start ***** -->
     <header class="header-area header-sticky">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="main-nav">
-                        <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">
-                            <h1>KostQu</h1>
-                        </a>
-                        <!-- ***** Logo End ***** -->
-                        <!-- ***** Menu Start ***** -->
-                        <ul class="nav">
-                            <li><a href="index.html" class="active">Home</a></li>
-                            <li><a href="properties.html">Details Kost</a></li>
-                            <!-- <li><a href="property-details.html">Property Details</a></li> -->
-                            <!-- <li><a href="contact.html">Contact Us</a></li> -->
-                            <li>
-                                <a href="https://wa.me/6282178938306?text=Apakah%20kost%20Barokfi%20masih%20ada%20yang%20kosong%3F" target="_blank">
-                                    <i class="fa fa-calendar"></i> Booking Now
-                                </a>
-                            </li>
-                        </ul>
-                        <a class='menu-trigger'>
-                            <span>Menu</span>
-                        </a>
-                        <!-- ***** Menu End ***** -->
-                    </nav>
+            <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/logo-kostqu.png" alt="Logo Kost" class="logo-icon">
+                <span class="logo-text">KostQu</span>
+                </a>
+
+                <!-- Tombol Hamburger -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Menu -->
+                <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="properties.html">Details Kost</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="btn btn-warning ms-lg-3" target="_blank"
+                        href="https://wa.me/6282178938306?text=Apakah%20kost%20Barokfi%20masih%20ada%20yang%20kosong%3F">
+                        <i class="fa fa-calendar"></i> Booking Now
+                    </a>
+                    </li>
+                </ul>
                 </div>
             </div>
+            </nav>
         </div>
     </header>
-    <!-- ***** Header Area End ***** -->
+
+    <!-- Deskripsi singkat KostQu -->
+    <section class="py-4 bg-white text-center">
+        <div class="container">
+            <h2 class="fw-bold mb-2">SELAMAT DATANG DI KOSTQU</h2>
+            <p class="text-secondary" style="max-width: 700px; margin: 0 auto;">
+                <strong>"SOLUSI KOST DAN KONTRAKAN MODERN DI UJUNG JARI ANDA"</strong>
+            </p>
+        </div>
+    </section>
 
     <div class="main-banner">
         <div class="owl-carousel owl-banner">
@@ -121,17 +195,75 @@ https://templatemo.com/tm-591-villa-agency
         </div>
     </div>
 
+    <section id="about" class="about-section py-5 bg-light">
+        <div class="container">
+            <!-- Judul Tengah -->
+            <div class="row mb-4">
+            <div class="col-12 text-center">
+                <h2 class="fw-bold">Tentang KostQu</h2>
+            </div>
+            </div>
+
+            <!-- Gambar & Deskripsi Sejajar -->
+            <div class="row align-items-center">
+            
+            <!-- Gambar -->
+            <div class="col-md-6 mb-4 mb-md-0">
+                <img src="assets/images/kostputra7.jpg" alt="KostQu" class="img-fluid rounded shadow">
+            </div>
+
+            <!-- Deskripsi -->
+            <div class="col-md-6">
+                <p>
+                KostQu adalah sebuah platform digital yang dirancang untuk memudahkan siapa pun dalam menemukan serta memasarkan kost dan kontrakan di wilayah Surabaya.
+                Melalui tampilan yang modern dan sistem yang mudah digunakan, KostQu menjadi jembatan antara pencari hunian dengan pemilik kost atau kontrakan.
+                Pengguna dapat dengan cepat menemukan informasi lengkap mengenai lokasi, fasilitas, harga, hingga ketersediaan unit, hanya dalam beberapa klik.
+                Bagi pemilik properti, KostQu memberikan kemudahan dalam mempromosikan kost mereka secara online tanpa biaya rumit.
+                Dengan mengedepankan kenyamanan, lokasi strategis, dan informasi yang akurat, KostQu hadir sebagai solusi praktis untuk hunian urban masa kini.
+                </p>
+                <p><strong>Temukan kost dan kontrakan yang nyaman, strategis, serta lengkap dalam satu klik!</strong></p>
+                <p><strong>Ikuti juga media sosial kami di bawah!</strong></p>
+
+                <div class="row mt-4">
+                    <!-- Instagram Box -->
+                    <div class="col-md-6 mb-3">
+                        <a href="https://www.instagram.com/kostqu_/" target="_blank" class="social-card">
+                            <div class="icon-wrapper">
+                                <i class="fa fa-instagram"></i>
+                            </div>
+                            <div class="text-wrapper">
+                                <h5>Instagram KostQu</h5>
+                                <p>Follow kami untuk update info kost terkini!</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- TikTok Box -->
+                    <div class="col-md-6 mb-3">
+                        <a href="https://tiktok.com/@kostqu" target="_blank" class="social-card">
+                            <div class="icon-wrapper">
+                                <i class="fa fa-music"></i>
+                            </div>
+                            <div class="text-wrapper">
+                                <h5>TikTok KostQu</h5>
+                                <p>Lihat konten video dan review hunian kami!</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
     <div class="featured section py-5 bg-light">
         <div class="container">
             <div class="row">
-                <!-- Gambar -->
-                <!-- <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 d-flex justify-content-center">
-                    <img src="assets/images/kamar1.jpg" class="img-fluid rounded shadow" alt="Kamar Kost" style="border-radius: 20px;">
-                </div> -->
+                <!-- Video -->
                 <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 d-flex justify-content-center">
                     <video class="img-fluid rounded shadow" style="border-radius: 20px;" controls>
                         <source src="assets/images/video1.mp4" type="video/mp4">
-                        Browser Anda tidak mendukung tag video.Add commentMore actions
+                        Browser Anda tidak mendukung tag video.
                     </video>
                 </div>
 
@@ -194,8 +326,9 @@ https://templatemo.com/tm-591-villa-agency
                                         <li>Masjid di depan dan belakang kost</li>
                                         <li>Minimarket (Alfamart, Indomaret)</li>
                                         <li>Apotek, kuliner, laundry</li>
+                                        <li><strong>Dekat dengan pusat kuliner populer</strong> seperti Warung Bu Kris, Mie Gacoan, dan Warkop 24 jam</li>
                                     </ul>
-                                </div>
+                                </div> 
                             </div>
                         </div>
 
@@ -260,64 +393,6 @@ https://templatemo.com/tm-591-villa-agency
         </div>
     </div>
 
-
-    <!-- <div class="video section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 offset-lg-4">
-                    <div class="section-heading text-center">
-                        <h6>| Video View</h6>
-                        <h2>Get Closer View & Different Feeling</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="video-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 offset-lg-1">
-                    <div class="video-frame">
-                        <img src="assets/images/video-frame.jpg" alt="">
-                        <a href="https://youtube.com" target="_blank"><i class="fa fa-play"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="fun-facts">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="wrapper">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="counter">
-                                    <h2 class="timer count-title count-number" data-to="34" data-speed="1000"></h2>
-                                    <p class="count-text ">Buildings<br>Finished Now</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="counter">
-                                    <h2 class="timer count-title count-number" data-to="12" data-speed="1000"></h2>
-                                    <p class="count-text ">Years<br>Experience</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="counter">
-                                    <h2 class="timer count-title count-number" data-to="24" data-speed="1000"></h2>
-                                    <p class="count-text ">Awwards<br>Won 2023</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
    <div class="section best-deal">
         <div class="container">
             <div class="row">
@@ -338,15 +413,6 @@ https://templatemo.com/tm-591-villa-agency
                                 <div class="tab-pane fade show active" id="appartment" role="tabpanel" aria-labelledby="appartment-tab">
                                     <div class="row">
                                         <div class="col-lg-3">
-                                            <!-- <div class="info-table">
-                                                <ul>
-                                                    <li>Luas Kamar <span>9 m² (3x3)</span></li>
-                                                    <li>Fasilitas Kamar <span>AC, Kasur, Meja, Lemari</span></li>
-                                                    <li>Kamar Mandi <span>Luar, Shower</span></li>
-                                                    <li>Listrik <span>Token perkamar</span></li>
-                                                    <li>Air & Listrik Umum <span>Gratis</span></li>
-                                                </ul>
-                                            </div> -->
                                             <div class="section-heading">
                                                 <h2>Temukan Kost Terbaik Untuk Para Pekerja Pria & Mahasiswa!</h2>
                                             </div>
@@ -363,24 +429,12 @@ https://templatemo.com/tm-591-villa-agency
                                                 <br><strong>Fasilitas sekitar lengkap</strong>: pasar, minimarket, masjid, apotek, taman, dan sentra kuliner.
                                                 Akses untuk transportasi umum cukup mudah dengan dilaluinya jalur feeder Wira Wiri Suroboyo.
                                             </p>
-                                            <!-- <div class="icon-button">
-                                                <a href="property-details.html"><i class="fa fa-calendar"></i> Schedule a visit</a>
-                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="villa" role="tabpanel" aria-labelledby="villa-tab">
                                     <div class="row">
                                         <div class="col-lg-3">
-                                            <!-- <div class="info-table">
-                                                <ul>
-                                                    <li>Luas Kamar <span>13.5m² (3x4.5)</span></li>
-                                                    <li>Fasilitas Kamar <span>AC, Kasur, Meja, Lemari</span></li>
-                                                    <li>Kamar Mandi <span> Dalam, Shower</span></li>
-                                                    <li>Listrik <span>Token perkamar</span></li>
-                                                    <li>Air & Listrik Umum <span>Gratis</span></li>
-                                                </ul>
-                                            </div> -->
                                             <div class="section-heading">
                                                 <h2>Temukan Kost Terbaik Untuk Para Pekerja Wanita & Mahasiswi!</h2>
                                             </div>
@@ -397,10 +451,6 @@ https://templatemo.com/tm-591-villa-agency
                                                 <br><strong>Fasilitas sekitar lengkap</strong>: pasar, minimarket, masjid, apotek, taman, dan sentra kuliner.
                                                 Akses untuk transportasi umum cukup mudah dengan dilaluinya jalur feeder Wira Wiri Suroboyo.
                                             </p>
-                                            <!-- <div class="icon-button">
-                                                <a href="property-details.html"><i class="fa fa-calendar"></i> Schedule a visit</a>
-                                            </div> -->
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -416,7 +466,6 @@ https://templatemo.com/tm-591-villa-agency
             <div class="row">
                 <div class="col-lg-4 offset-lg-4">
                     <div class="section-heading text-center">
-                        <!-- <h6>| Contact Us</h6> -->
                         <h2>Details Lokasi Kost Barokfi Putra & Putri</h2>
                     </div>
                 </div>
@@ -424,103 +473,80 @@ https://templatemo.com/tm-591-villa-agency
         </div>
     </div>
 
-    <div class="contact-content">
+        <div class="contact-content">
         <div class="container">
-            <!-- <div class="row">
-                <div class="col-lg-7"> -->
-            <div class="row">
-                <!-- Kost Putra -->
-                <div class="col-6" style="padding-right: 10px;">
-                    <h5 class="mb-2 text-white">Kost Barokfi Putra</h5>
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-10 col-sm-12 mb-4">
+                    <h5 class="mb-2 text-white text-center">Kost Barokfi Putra</h5>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1978.6569332878066!2d112.78769331183732!3d-7.318596303362181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb0ce73cc04f%3A0xb73aad38bf43ae0!2sKost%20Barokfi%20(Kos%20Putra)!5e0!3m2!1sen!2sid!4v1750479132855!5m2!1sen!2sid"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
 
-
-                <!-- Kost Putri -->
-                <div class="col-6" style="padding-left: 10px;">
-                    <h5 class="mb-2 text-white">Kost Barokfi Putri</h5>
+                <div class="col-lg-6 col-md-10 col-sm-12 mb-4">
+                    <h5 class="mb-2 text-white text-center">Kost Barokfi Putri</h5>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.2566997808153!2d112.79047287504753!3d-7.325037992683197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb9585474d71%3A0xfb35ada954d264e4!2sKost%20Barokfi%20(Kos%20Putri)!5e0!3m2!1sen!2sid!4v1750479422351!5m2!1sen!2sid"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 
-            <div class="row mt-4 justify-content-center text-center">
-                <div class="col-lg-4 d-flex flex-column align-items-center">
-                    <a href="https://wa.me/628175753536?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20kost%20Barokfi" target="_blank" class="text-decoration-none text-dark">
-                        <div class="item phone d-flex align-items-center justify-content-center">
-                            <img src="assets/images/phone-icon.png" alt="" style="max-width: 52px; margin-right: 10px;">
-                            <h6>
-                                0817 5753 536<br>
-                                <span>Pemilik kosan</span>
-                            </h6>
-                        </div>
-                    </a>
-                </div>
+            <div class="text-center mt-4">
+                <button class="btn btn-warning" id="contactAdminBtn">
+          Ingin Pasang Iklan Kosan Anda?
+        </button>
+            </div>
 
-                <!-- <div class="col-lg-4 d-flex flex-column align-items-center">
-                    <div class="item email d-flex align-items-center justify-content-center">
-                        <img src="assets/images/email-icon.png" alt="" style="max-width: 52px; margin-right: 10px;">
-                        <h6>info@villa.co<br><span>Business Email</span></h6>
+            <!-- Custom Popup -->
+            <div id="customPopup" class="custom-popup">
+                <div class="custom-popup-content">
+                    <p>Apakah Anda ingin memasarkan kosan Anda? Jika ya, Anda akan diarahkan ke WhatsApp Admin.</p>
+                    <div class="text-center mt-4">
+                        <button class="btn btn-success me-2" id="popupYes">Ya, lanjutkan</button>
+                        <button class="btn btn-secondary" id="popupNo">Batal</button>
                     </div>
-                </div> -->
+                </div>
             </div>
-
-
-            <!-- <div class="col-lg-5">
-                    <form id="contact-form" action="" method="post">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <fieldset>
-                                    <label for="name">Full Name</label>
-                                    <input type="name" name="name" id="name" placeholder="Your Name..." autocomplete="on" required>
-                                </fieldset>
-                            </div>
-                            <div class="col-lg-12">
-                                <fieldset>
-                                    <label for="email">Email Address</label>
-                                    <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your E-mail..." required="">
-                                </fieldset>
-                            </div>
-                            <div class="col-lg-12">
-                                <fieldset>
-                                    <label for="subject">Subject</label>
-                                    <input type="subject" name="subject" id="subject" placeholder="Subject..." autocomplete="on">
-                                </fieldset>
-                            </div>
-                            <div class="col-lg-12">
-                                <fieldset>
-                                    <label for="message">Message</label>
-                                    <textarea name="message" id="message" placeholder="Your Message"></textarea>
-                                </fieldset>
-                            </div>
-                            <div class="col-lg-12">
-                                <fieldset>
-                                    <button type="submit" id="form-submit" class="orange-button">Send Message</button>
-                                </fieldset>
-                            </div>
-                        </div>
-                    </form>
-                </div> -->
         </div>
     </div>
     </div>
     <footer>
         <div class="container">
-            <div class="col-lg-8">
-                <!-- <p>Copyright © 2048 Villa Agency Co., Ltd. All rights reserved. Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a></p> -->
-            </div>
+            <p class="mb-0">© 2025 KostQu. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/isotope.min.js"></script>
     <script src="assets/js/owl-carousel.js"></script>
     <script src="assets/js/counter.js"></script>
     <script src="assets/js/custom.js"></script>
+
+    <script>
+        const popup = document.getElementById("customPopup");
+        const btnOpen = document.getElementById("contactAdminBtn");
+        const btnYes = document.getElementById("popupYes");
+        const btnNo = document.getElementById("popupNo");
+
+        btnOpen.addEventListener("click", function(e) {
+            e.preventDefault();
+            popup.style.display = "block";
+        });
+
+        btnYes.addEventListener("click", function() {
+            window.open("https://wa.me/6282121214487?text=Halo%20Admin%2C%20saya%20ingin%20mengiklankan%20kosan%20saya.%20Bagaimana%20prosedurnya%3F", "_blank");
+            popup.style.display = "none";
+        });
+
+        btnNo.addEventListener("click", function() {
+            popup.style.display = "none";
+        });
+
+        window.addEventListener("click", function(e) {
+            if (e.target == popup) {
+                popup.style.display = "none";
+            }
+        });
+    </script>
 
 </body>
 
